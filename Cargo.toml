@@ -1,6 +1,6 @@
 [package]
 name = "or-else-map"
-version = "0.0.1"
+version = "0.1.0"
 edition = "2024"
 repository = "https://github.com/jessekrubin/or-else-map"
 description = "non-yoda versions of Option::map_or_else and Result::map_or_else"
