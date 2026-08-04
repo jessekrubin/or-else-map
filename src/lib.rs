@@ -1,14 +1,14 @@
 #![doc = include_str!("../README.md")]
 
 /// `Option::map_or_else` but with the english words in "WYSIWYG" order
-pub trait OrElseMapOption<T> {
+pub trait OptionOrElseMap<T> {
     fn or_else_map<U, D, F>(self, default: D, map: F) -> U
     where
         D: FnOnce() -> U,
         F: FnOnce(T) -> U;
 }
 
-impl<T> OrElseMapOption<T> for Option<T> {
+impl<T> OptionOrElseMap<T> for Option<T> {
     #[inline]
     fn or_else_map<U, D, F>(self, default: D, map: F) -> U
     where
@@ -20,14 +20,14 @@ impl<T> OrElseMapOption<T> for Option<T> {
 }
 
 /// `Result::map_or_else` but with the english words in "WYSIWYG" order
-pub trait OrElseMapResult<T, E> {
+pub trait ResultOrElseMap<T, E> {
     fn or_else_map<U, D, F>(self, default: D, map: F) -> U
     where
         D: FnOnce(E) -> U,
         F: FnOnce(T) -> U;
 }
 
-impl<T, E> OrElseMapResult<T, E> for Result<T, E> {
+impl<T, E> ResultOrElseMap<T, E> for Result<T, E> {
     #[inline]
     fn or_else_map<U, D, F>(self, default: D, map: F) -> U
     where
@@ -39,7 +39,7 @@ impl<T, E> OrElseMapResult<T, E> for Result<T, E> {
 }
 
 pub mod prelude {
-    pub use super::{OrElseMapOption, OrElseMapResult};
+    pub use super::{OptionOrElseMap, ResultOrElseMap};
 }
 
 #[cfg(test)]
