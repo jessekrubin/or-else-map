@@ -1,0 +1,40 @@
+[package]
+name = "or-else-map"
+version = "0.1.0"
+edition = "2024"
+repository = "https://github.com/jessekrubin/or-else-map"
+description = "non-yoda versions of Option::map_or_else and Result::map_or_else"
+readme = "README.md"
+authors = ["jessekrubin <jessekrubin@example.com>"]
+categories = ["rust-patterns"]
+keywords = [
+    "map_or_else",
+    "or_else_map",
+    "option",
+    "result",
+    "first-or-last",
+]
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+
+[lints.rust]
+missing_copy_implementations = "warn"
+unreachable_pub = "warn"
+unsafe_code = "warn"
+unsafe_op_in_unsafe_fn = "warn"
+unused_crate_dependencies = "warn"
+
+[lints.clippy]
+cargo = { level = "warn", priority = -2 }
+all = { level = "warn", priority = -2 }
+pedantic = { level = "warn", priority = -2 }
+correctness = { level = "warn", priority = 2 }
+panic = { level = "warn", priority = -1 }
+style = { level = "warn", priority = 1 }
+perf = { level = "warn", priority = 3 }
+unwrap_used = "deny"
+explicit_auto_deref = "warn"
+use_self = "warn"
+derive_partial_eq_without_eq = "warn"
+literal_string_with_formatting_args = "warn"
