@@ -12,7 +12,6 @@ keywords = [
     "or_else_map",
     "option",
     "result",
-    "flip-it-and-reverse-it",
     "first-or-last",
 ]
 license = "MIT OR Apache-2.0"
